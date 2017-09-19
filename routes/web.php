@@ -14,3 +14,7 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('/criptografar', 'CryptController@criptografar')->name('criptografar');
+
+Route::post('/descriptografar', 'CryptController@descriptografar')->name('descriptografar');
