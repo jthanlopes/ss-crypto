@@ -85,15 +85,15 @@
     <form method="POST" action="{{ route('criptografar') }}">
       {{ csrf_field() }}
       <div class="box-01">
-        <textarea rows="10" cols="50" name="text" placeholder="Digite o texto a ser criptografado" autofocus required></textarea>
+        <textarea rows="10" cols="50" name="text" placeholder="Digite o texto a ser criptografado" autofocus required>{{ $result }}</textarea>
         <input type="text" name="key" placeholder="Digite a chave para criptografar" required>
         <button type="input">Criptografar</button>
       </div>
     </form>
     <form method="POST" action="{{ route('descriptografar') }}">
       {{ csrf_field() }}
-      <div class="box-02">        
-        <textarea rows="10" cols="50" name="text_crypt" placeholder="Digite o texto a ser descriptografado" required></textarea>
+      <div class="box-02">    
+        <textarea rows="10" cols="50" name="text_crypt" placeholder="Digite o texto a ser descriptografado" required></textarea>        
         <input type="text" name="key_crypt" placeholder="Digite a chave para descriptografar" required>
         <button type="input">Descriptografar</button>
       </div>

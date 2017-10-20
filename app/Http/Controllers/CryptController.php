@@ -12,12 +12,18 @@ class CryptController extends Controller
   }
 
   public function criptografar(Request $request) {    
-    $final = "Texto: " . $request->text . ", Chave: " . $request->key;
-    dd($final);
+    $text = $request->text;
+    $key = $request->key;    
+    $result = openssl_encrypt($text, "AES-128-ECB", $key);
+
+    return view('resultCrypt', compact('result'));
   }
 
-  public function descriptografar(Request $request) {
-    $final = "Texto: " . $request->text_crypt . ", Chave: " . $request->key_crypt;
-    dd($final);
+  public function descriptografar(Request $request) {    
+    $text = $request->text_crypt;
+    $key = $request->key_crypt;
+    $result = $decrypted = openssl_decrypt($text, "AES-128-ECB", $key);
+
+    return view('resultDecrypt', compact('result'));
   }
 }

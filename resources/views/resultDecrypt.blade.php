@@ -91,9 +91,9 @@
       </div>
     </form>
     <form method="POST" action="{{ route('descriptografar') }}">
-      {{ csrf_field() }}
+      {{ csrf_field() }}        
       <div class="box-02">        
-        <textarea rows="10" cols="50" name="text_crypt" placeholder="Digite o texto a ser descriptografado" required></textarea>
+        <textarea rows="10" cols="50" name="text_crypt" placeholder="Digite o texto a ser descriptografado" required>{{ $result }}</textarea>
         <input type="text" name="key_crypt" placeholder="Digite a chave para descriptografar" required>
         <button type="input">Descriptografar</button>
       </div>
